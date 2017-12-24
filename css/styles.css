@@ -34,6 +34,7 @@ h2 {
 
 .wrapper {
     margin: 0 auto;
+    max-width: 1500px;
 }
 
 .logo {
@@ -78,6 +79,21 @@ nav a:hover{
     color: #00c4c7;
 }
 
+article img {
+    border-radius: 10px;
+    float: right;
+    margin: 0 0 1em 1em;
+}
+
+/*
+.banner {
+    background: url(../img/gallery/table-with-pies.jpg) no-repeat;
+    height: 120px;
+    margin: 0;
+    padding: 0;
+}
+*/
+
 .main-content {
     background-color: #fff6e0;
     border-bottom-left-radius: 10px;
@@ -85,17 +101,37 @@ nav a:hover{
     padding: 1em;
 }
 
-article img {
-    border-radius: 10px;
-    width: 100%;
-    max-width: 250px;
-    float: right;
-    margin: 0 0 1em 1em;
-}
-
 .secondary-content {
     display: flex;
     flex-flow: row wrap;
+}
+
+.buttons {
+    background: #c80060;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.buttons:hover {
+    background: #ffffff;
+    color: #c80060;
+    border: 2px solid #c80060;
+    font-weight: bold;
+}
+
+.home-boxes {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0 0 30px 0;
+}
+
+.home-boxes h3 {
+    font-size: 1.6em;
 }
 
 .testimonials,
@@ -132,6 +168,24 @@ article img {
     background-color: #c80060;
 }
 
+.pie-gallery ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.pie-gallery li {
+    flex: 0 0 100%;
+}
+
+li > img {
+    width: 100%;
+}
+
 blockquote {
     padding: 0;
     margin: 0;
@@ -154,7 +208,6 @@ footer {
     color: #ffffff;
     margin: 10px auto;
     text-align: center;
-    
 }
 
 footer a {
@@ -188,7 +241,20 @@ footer ul {
        margin-right: 1.5em;
     }
     
-    .history > h2 {
+    .banner {
+        background: url(../img/gallery/table-with-pies_medium.jpg) no-repeat;
+        height: 120px;
+        max-width: 900px;
+    }     
+    
+    .home-boxes > li {
+        flex: 0 1 50%;
+        padding: 10px;
+    } 
+    
+    .history > h2,
+    .main-content > h2,
+    .pie-gallery > h2 {
         margin-top: 0;
     }
     
@@ -201,6 +267,23 @@ footer ul {
         flex: 0 1 47%;
     }
     
+    .pie-gallery li {
+        flex: 0 0 50%;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #menu {
+        order: -1;
+    }
+    
+    #testimonial {
+        order: 10;
+    }
+    
+    #donations {
+        order: 20;
+    }
 }
 
 @media screen and (min-width: 850px) {
@@ -211,6 +294,12 @@ footer ul {
     .logo {
         justify-content: flex-start;
     }
+    
+    .banner {
+        background: url(../img/gallery/table-with-pies_big.jpg) no-repeat;
+        height: 180px;
+        max-width: 1500px;
+    }     
     
     .main-content {
         padding: 2.5em 2.5em 2.8em 2.5em;
@@ -229,11 +318,27 @@ footer ul {
         margin-right: 1.5em;
     }
 
+    .home-boxes {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .home-boxes > li {
+        flex: 0 1 25%;
+        padding: 0 10px;
+    } 
+    
+    .home-boxes h3 {
+        font-size: 2em;
+    }
+    
     .history {
         flex: 0 1 70%;
     }
     
-    .history > h2 {
+    .history > h2,
+    .main-content > h2,
+    .pie-gallery > h2 {
         font-size: 3em;
         border-bottom: 2px dotted #c80060;
         margin: 0 0 .8em 0;
@@ -249,9 +354,12 @@ footer ul {
         margin: 0;
     }
     
-    
     h3 {
         font-size: 2em;
+    }
+    
+    .pie-gallery li {
+        flex: 0 0 33%;
     }
     
 }
